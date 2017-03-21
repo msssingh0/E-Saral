@@ -1,0 +1,74 @@
+<template name="editScheme">
+	<div class="container-fluid">
+		<div class="col-md-12 text-centre">
+          <center> <h1 class="well" style="font-family: 'Diplomata SC', cursive;">Admin Portal</h1></center>
+		</div>
+		<br><br><br><br><br>
+
+		<table class="table table-striped text-center well" border="solid 1px">
+			<tr>
+				<th class="text-center">Scheme Name</th>
+				<th class="text-center">Category</th>
+				<th class="text-center">Description</th>
+			</tr>
+		</table>
+		  {{#each data}}
+		<table class="table table-striped text-center well" border="solid 1px">
+		  <tr>
+		  	<td>{{title}}</td>
+		  	<td>{{category}}</td>
+		  	<td>
+		  		<button type="button" class="btn btn-default btn-md" aria-label="Left Align" data-toggle="modal" data-target="#myModal">
+		  		  <span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+		  		</button>
+		  		  <!-- Modal -->
+		  		  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  		    <div class="modal-dialog" role="document">
+		  		      <div class="modal-content">
+		  		        <div class="modal-header">
+		  		          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		  		          <h4 class="modal-title" id="myModalLabel">Description of Scheme</h4>
+		  		        </div>
+		  		        <div class="modal-body well">
+		  		          {{data}}
+		  		        </div>
+		  		        <div class="modal-footer">
+		  		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  		          <button type="button" class="btn btn-primary" id="editScheme">Edit</button>
+		  		          <button type="button" class="btn btn-primary" id="deleteScheme">Delete</button>
+		  		        </div>
+		  		      </div>
+		  		    </div>
+		  		  </div>
+		  			
+		  	</td>
+		  </tr>
+		</table>
+		  {{/each}}
+
+		  <button type="button" class="btn btn-primary" id="addScheme"  aria-label="Left Align" data-toggle="modal" data-target="#myModal2">Add New Scheme</button>
+		  <!-- Modal -->
+		  		  <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  		    <div class="modal-dialog" role="document">
+		  		      <div class="modal-content">
+		  		        <div class="modal-header">
+		  		          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		  		          <h4 class="modal-title" id="myModalLabel">Add new Scheme</h4>
+		  		        </div>
+		  		        <div class="modal-body">
+		  		          <form id="newSchemeForm">
+		  		          	<div class="form-group">
+		  		          	  <label for="schemeJSON">scheme JSON</label>
+		  		          	  <input type="textbox" class="form-control" id="schemeJSON" placeholder="Enter Scheme for your JSON">
+		  		          	</div>
+		  		          </form>
+		  		        </div>
+		  		        <div class="modal-footer">
+		  		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  		          <button type="button" class="btn btn-primary" id="addNewScheme">Add</button>
+		  		        </div>
+		  		      </div>
+		  		    </div>
+		  		  </div>
+	</div>
+</template>

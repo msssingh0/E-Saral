@@ -1,0 +1,76 @@
+<template name="home">
+	<div class="container-fluid">
+		
+		<div class="col-md-12 text-centre">
+          <center> <h1 class="well" style="font-family: 'Diplomata SC', cursive;">E-SARAL</h1></center>
+		</div>
+		<br><br><br><br><br>
+		<div>
+			<a href="/editScheme"><button class="btn btn-primary">Admin Login</button></a>
+		</div>
+		<div class="col-md-offset-3 col-md-6">
+			<div class="panel panel-default">
+			  <div class="panel-heading text-center">
+			  	<b>Please Fill below info to know about all the Government schemes for you</b><br>
+                <b>(कृपया आपके लिए सभी सरकारी योजनाओं के बारे में जानने के लिए नीचे जानकारी भरें)</b>
+			  	</div>
+			  <div class="panel-body">
+			<form id="form">
+				{{#each ip}}
+			  <div class="form-group">
+			    <label for="{{id}}">{{name}}</label>
+			    <input type="{{type}}" class="form-control" id="{{id}}" placeholder="{{placeholder}}">
+			  </div>
+			  {{/each}}
+			  <button type="submit" class="btn btn-success col-md-offset-5">Submit</button>
+			</form>
+<br><br><br>
+			  </div>
+			</div>
+		</div>
+<!-- {{#if searched}}
+		<div class="col-md-offset-3 col-md-6">
+			<div class="panel panel-default">
+						  <div class="panel-heading text-center">
+						  	<b>You are eligible for following schemes</b><br>
+						  	</div>
+						  <div class="panel-body">
+							{{#each data}}
+							{{abc}}-->
+							<!-- {{#if match}}
+
+							{{/if}} -->
+							<!--{{/each}}
+						  </div>
+						</div>
+		</div>
+{{/if}} -->
+<div class="col-md-offset-3 col-md-6">
+			<div class="panel panel-default">
+						  <div class="panel-heading text-center">
+						  	<b>You are eligible for following schemes</b><br>
+						  	</div>
+						  <div class="panel-body">
+						  	<table class="table table-striped">
+						  		<tr>
+						  			<th>Scheme name</th>
+						  			<th>Category</th>
+						  			<th>Description</th>
+						  		</tr>
+						  		<tr>
+						  		<td>Mukhymantri ekalnaari samman pension yojna</td>
+						  		<td>Pension</td>
+						  		<td><a href="#">click here</a></td>
+						  		</tr>
+						  		<tr>
+						  			<td>Mukhymantri vrudhjan samman pension yojana</td>
+						  			<td>Pension</td>
+						  		    <td><a href="#">click here</a></td>
+						  		</tr>	
+						  	</table>
+							
+						  </div>
+						</div>
+		</div>
+	</div>
+</template>

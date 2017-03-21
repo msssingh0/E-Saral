@@ -1,0 +1,1 @@
+AllSchemes = new Meteor.Collection('allSchemes');
